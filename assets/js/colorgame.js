@@ -24,43 +24,43 @@ for(var i =0; i<mode.length; i++){
     }*/
 })
 }
+
+
 newColor.addEventListener("click",function(){
     restart()
 })
+
+
 function easyPlay(){
    /* easy.classList.add("selected")
     hard.classList.remove("selected")*/
     numSquares = 3
     restart()
-    
     for(var i = 0; i< squares.length; i++){
       if(colors[i]){
         squares[i].style.background = colors[i]
       }
          else {
             squares[i].style.display = "none"
-         }  
-            
+         }     
         }
         play()
-    
-    
-
 }
+
+
 function hardPlay(){
    /* easy.classList.remove("selected")
     hard.classList.add("selected")*/
     numSquares = 6
     restart()
-    
     for(var i = 0; i< squares.length; i++){
-      
             squares[i].style.background = colors[i]
             squares[i].style.display = "block"
         }
     play()
-
 }
+
+
 /*easy.addEventListener("click",function(){
     easyPlay()
    
@@ -100,29 +100,33 @@ function hardPlay(){
 function changeColors(color){
     for(var i = 0; i < colors.length; i++){
         squares[i].style.background = color;
-
     }
-
-
 }
+
+
 function pickColor(){
  var random =  Math.floor(Math.random() * colors.length)
  return colors[random];
 }
+
+
 function generateRandomColors(num){
 var arr = []
 for(var i = 0; i< num; i++){
     arr.push(randomColor())
-
 }
 return arr
 }
+
+
 function randomColor(){
  var r = Math.floor(Math.random() * 256)
  var g = Math.floor(Math.random() * 256)
  var b = Math.floor(Math.random() * 256)
  return "rgb(" + r + ", " + g + ", "+ b + ")"
 }
+
+
 function play(){
     h1.style.backgroundColor = "steelblue"
     newColor.textContent = "New Color"
@@ -142,7 +146,8 @@ function play(){
             }
            })
        }}
-      
+    
+       
        function restart(){
         colors = generateRandomColors(numSquares)
         pickedColor = pickColor();
