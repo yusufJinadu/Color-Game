@@ -17,98 +17,55 @@ for(var i =0; i<mode.length; i++){
     mode[1].classList.remove("selected")
     this.classList.add("selected")
     this.textContent === "Easy" ? easyPlay() : hardPlay()
-    /*if(this.textContent === "Easy"){
-        easyPlay()
-    }else{
-        hardPlay()
-    }*/
 })
 }
+
+
 newColor.addEventListener("click",function(){
     restart()
 })
+
+
 function easyPlay(){
-   /* easy.classList.add("selected")
-    hard.classList.remove("selected")*/
     numSquares = 3
     restart()
-    
     for(var i = 0; i< squares.length; i++){
       if(colors[i]){
         squares[i].style.background = colors[i]
       }
          else {
             squares[i].style.display = "none"
-         }  
-            
+         }     
         }
         play()
-    
-    
-
 }
+
+
 function hardPlay(){
-   /* easy.classList.remove("selected")
-    hard.classList.add("selected")*/
     numSquares = 6
     restart()
-    
     for(var i = 0; i< squares.length; i++){
       
             squares[i].style.background = colors[i]
             squares[i].style.display = "block"
         }
     play()
-
 }
-/*easy.addEventListener("click",function(){
-    easyPlay()
-   
-    easy.classList.add("selected")
-    hard.classList.remove("selected")
-    numSquares = 3
-    restart()
-    
-    for(var i = 0; i< squares.length; i++){
-      if(colors[i]){
-        squares[i].style.background = colors[i]
-      }
-         else {
-            squares[i].style.display = "none"
-         }  
-            
-        }
-        play()
-    
-    })*/
-/*hard.addEventListener("click",function(){
-    hardPlay()
 
-    easy.classList.remove("selected")
-    hard.classList.add("selected")
-    numSquares = 6
-    restart()
-    
-    for(var i = 0; i< squares.length; i++){
-      
-            squares[i].style.background = colors[i]
-            squares[i].style.display = "block"
-        }
-    play()
-    })*/
     
 function changeColors(color){
     for(var i = 0; i < colors.length; i++){
         squares[i].style.background = color;
-
     }
-
-
 }
+
+
 function pickColor(){
  var random =  Math.floor(Math.random() * colors.length)
  return colors[random];
 }
+
+
 function generateRandomColors(num){
 var arr = []
 for(var i = 0; i< num; i++){
@@ -117,6 +74,8 @@ for(var i = 0; i< num; i++){
 }
 return arr
 }
+
+
 function randomColor(){
  var r = Math.floor(Math.random() * 256)
  var g = Math.floor(Math.random() * 256)
@@ -142,6 +101,7 @@ function play(){
             }
            })
        }}
+       
       
        function restart(){
         colors = generateRandomColors(numSquares)
